@@ -144,7 +144,7 @@ public class Grafo {
             aux = aux.siguiente;
             contador++;
         }
-        return null;  
+        return null;
     }
 
     public void mostrarMatrizAdyacencia() {
