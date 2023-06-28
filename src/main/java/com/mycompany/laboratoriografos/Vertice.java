@@ -8,6 +8,5 @@ public class Vertice {
     
     public Vertice(String valor) {
         this.valor = valor;
-    }
-    
+    } 
 }

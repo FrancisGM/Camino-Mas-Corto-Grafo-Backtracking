@@ -25,5 +25,7 @@ public class LaboratorioGrafos {
         g1.insertarArista(1,"V2.2","V3",false);
         g1.insertarArista(1,"V2.3","V3",false);
         g1.mostrar();
+        g1.mostrarMatrizAdyacencia();
+        g1.mostrarCamino("V0", "V3");
     }
 }

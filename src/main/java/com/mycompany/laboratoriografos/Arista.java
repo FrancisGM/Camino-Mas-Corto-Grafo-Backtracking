@@ -11,8 +11,4 @@ public class Arista {
         this.origen = origen;
         this.destino = destino;
     }
-    
-   
-
-    
 }
