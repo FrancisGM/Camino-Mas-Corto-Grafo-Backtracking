@@ -1,6 +1,7 @@
 package com.mycompany.laboratoriografos;
 
 public class Arista {
+
     public int peso;
     public Arista siguiente;
     public Vertice origen;

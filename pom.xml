@@ -10,4 +10,5 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <exec.mainClass>com.mycompany.laboratoriografos.LaboratorioGrafos</exec.mainClass>
     </properties>
+    <name>LaboratorioBackTracking</name>
 </project>
