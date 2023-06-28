@@ -168,9 +168,9 @@ public class Grafo {
         return mejorRuta;
     }
 
-    public void backtrack(int nodoActual, int nodoFin, int distanciaActual, List<Integer> rutaActual, boolean[] visitado) {
+    public void backtrack(int indexActual, int indexDestino, int distanciaActual, List<Integer> rutaActual, boolean[] Visitado) {
         int[][] matrizAdyacencia = this.obtenerMatrizAdyacencia();
-        if (nodoActual == nodoFin) {
+        if (indexActual == indexDestino) {
             if (distanciaActual < minDistancia) {
                 this.minDistancia = distanciaActual;
                 this.mejorRuta = new ArrayList<>(rutaActual);
@@ -179,12 +179,12 @@ public class Grafo {
         }
 
         for (int i = 0; i < this.orden; i++) {
-            if (matrizAdyacencia[nodoActual][i] > 0 && !visitado[i]) {
-                visitado[i] = true;
+            if (matrizAdyacencia[indexActual][i] > 0 && !Visitado[i]) {
+                Visitado[i] = true;
                 rutaActual.add(i);
-                backtrack(i, nodoFin, distanciaActual + matrizAdyacencia[nodoActual][i], rutaActual, visitado);
+                backtrack(i, indexDestino, distanciaActual + matrizAdyacencia[indexActual][i], rutaActual, Visitado);
                 rutaActual.remove(rutaActual.size() - 1);
-                visitado[i] = false;
+                Visitado[i] = false;
             }
         }
     }
