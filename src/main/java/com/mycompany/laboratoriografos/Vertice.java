@@ -2,11 +2,11 @@
 package com.mycompany.laboratoriografos;
 
 public class Vertice {
-    public int valor;
+    public String valor;
     public Arista adyacente;
     public Vertice siguiente;
     
-    public Vertice(int valor) {
+    public Vertice(String valor) {
         this.valor = valor;
     }
     

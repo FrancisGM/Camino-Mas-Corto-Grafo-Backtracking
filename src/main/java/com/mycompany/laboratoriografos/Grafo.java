@@ -18,7 +18,7 @@ public class Grafo {
         }
     }
 
-    public void insertarVertice(int valor) {
+    public void insertarVertice(String valor) {
         Vertice nuevo = new Vertice(valor);
         if (this.vacio()) {
             this.inicio = nuevo;
@@ -31,7 +31,7 @@ public class Grafo {
         }
     }
 
-    public void insertarArista(int peso, int origen, int destino) {
+    public void insertarArista(int peso, String origen, String destino, boolean dirigido) {
         Vertice aux1 = this.inicio;
         Vertice aux2 = this.inicio;
         Arista aux3;
@@ -57,35 +57,11 @@ public class Grafo {
                 aux3.siguiente = nuevo;
             }
         }
-    }
-
-    public void recorrido() {
-        Cola listaCola = new Cola();
-        Cola listaSalida = new Cola();
-        listaCola.insertar(this.inicio);
-        this.recorridoAmplitud(listaCola, listaSalida);
-
-    }
-
-    public void recorridoAmplitud(Cola listaCola, Cola listaSalida) {
-        if (listaCola.vacio()) {
-            listaSalida.imprimirCola();
-        } else {
-            Vertice aux=listaCola.quitar();
-            if (listaSalida.pertenece(aux)) {
-                this.recorridoAmplitud(listaCola, listaSalida);
-            }else{
-                Arista aux2=aux.adyacente;
-                while(aux2!=null){
-                    listaCola.insertar(aux2.destino);
-                    aux2=aux2.siguiente;
-                }
-                listaSalida.insertar(aux);
-                this.recorridoAmplitud(listaCola, listaSalida);
-            }
+        if(!dirigido){
+            this.insertarArista(peso, destino, origen, true);
         }
-
     }
+
 
     public void mostrar() {
         Vertice aux1 = this.inicio;
